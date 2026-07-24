@@ -1,1 +1,74 @@
-css
+/* ---------- LOVE WALLET ---------- */
+
+.love-wallet{
+    padding:28px 20px;
+    background:linear-gradient(135deg,#ff5c9a,#ff8fb7);
+    color:white;
+    border-radius:0 0 30px 30px;
+    box-shadow:0 10px 30px rgba(255,92,154,.25);
+}
+
+.wallet-title{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.wallet-title h1{
+    margin:0;
+    font-size:32px;
+}
+
+.wallet-title p{
+    margin-top:6px;
+    opacity:.9;
+    font-size:15px;
+}
+
+.wallet-cards{
+    display:flex;
+    gap:14px;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+.wallet-card{
+    flex:1;
+    min-width:100px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:22px;
+
+    padding:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    transition:.25s;
+}
+
+.wallet-card:active{
+    transform:scale(.96);
+}
+
+.wallet-icon{
+    font-size:30px;
+}
+
+.wallet-card h3{
+    margin:0;
+    font-size:24px;
+}
+
+.wallet-card p{
+    margin:2px 0 0;
+    font-size:13px;
+    opacity:.9;
+}
