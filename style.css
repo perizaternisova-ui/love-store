@@ -186,3 +186,142 @@ transition:.25s;
 transform:scale(.98);
 
 }
+
+/* ========================= */
+/* КАРТОЧКИ LOVE STORE */
+/* ========================= */
+
+.gift-card{
+
+background:rgba(255,255,255,.35);
+
+backdrop-filter:blur(16px);
+-webkit-backdrop-filter:blur(16px);
+
+border-radius:28px;
+
+padding:22px;
+
+margin:18px 0;
+
+text-align:center;
+
+transition:.35s;
+
+box-shadow:0 10px 30px rgba(255,105,180,.15);
+
+border:2px solid transparent;
+
+}
+
+.gift-card:hover{
+
+transform:translateY(-6px);
+
+}
+
+.gift-icon{
+
+font-size:58px;
+
+margin-bottom:10px;
+
+}
+
+.gift-card h3{
+
+margin:0;
+
+font-size:24px;
+
+color:#ff4f87;
+
+}
+
+.gift-card p{
+
+color:#666;
+
+margin:12px 0;
+
+line-height:1.4;
+
+}
+
+.price{
+
+font-size:22px;
+
+font-weight:bold;
+
+margin:16px 0;
+
+color:#ff4f87;
+
+}
+
+.buy-btn{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:16px;
+
+font-size:17px;
+
+font-weight:bold;
+
+background:linear-gradient(90deg,#ff7eb3,#ff4f87);
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.buy-btn:hover{
+
+transform:scale(1.03);
+
+}
+
+.buy-btn:active{
+
+transform:scale(.97);
+
+}
+
+/* ======== РЕДКОСТЬ ======== */
+
+.common{
+
+border-color:#d6d6d6;
+
+}
+
+.rare{
+
+border-color:#6ec1ff;
+
+}
+
+.epic{
+
+border-color:#b56cff;
+
+box-shadow:0 0 20px rgba(181,108,255,.35);
+
+}
+
+.legendary{
+
+border-color:#ffd54a;
+
+box-shadow:0 0 25px rgba(255,213,74,.45);
+
+}
