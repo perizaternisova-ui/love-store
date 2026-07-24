@@ -53,3 +53,22 @@ button:hover{
     background:#ff2c7b;
     transform:scale(1.03);
 }
+
+@keyframes float{
+
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
