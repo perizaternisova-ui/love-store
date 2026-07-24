@@ -72,3 +72,106 @@
     font-size:13px;
     opacity:.9;
 }
+
+/* ---------- КАРТОЧКИ ---------- */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(165px,1fr));
+    gap:18px;
+    margin-top:18px;
+}
+
+.card{
+
+    background:rgba(255,255,255,.82);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:26px;
+
+    padding:22px 18px;
+
+    text-align:center;
+
+    box-shadow:
+        0 8px 24px rgba(255,92,154,.12);
+
+    transition:.25s;
+
+    border:1px solid rgba(255,255,255,.65);
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card:active{
+    transform:scale(.97);
+}
+
+.card .emoji{
+    font-size:52px;
+    margin-bottom:14px;
+}
+
+.card h3{
+    margin:0;
+    font-size:19px;
+    color:#333;
+}
+
+.card p{
+    color:#777;
+    font-size:14px;
+    margin:10px 0 16px;
+    min-height:40px;
+}
+
+.price{
+
+    display:inline-block;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:#fff0f6;
+
+    color:#ff4f94;
+
+    font-weight:700;
+
+    margin-bottom:14px;
+}
+
+.buy-btn{
+
+    width:100%;
+
+    border:none;
+
+    border-radius:16px;
+
+    padding:13px;
+
+    background:linear-gradient(135deg,#ff5c9a,#ff87b3);
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.buy-btn:hover{
+    transform:translateY(-2px);
+}
+
+.buy-btn:active{
+    transform:scale(.96);
+}
