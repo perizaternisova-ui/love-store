@@ -247,3 +247,21 @@ section h2{
     }
 
 }
+
+.common{
+    border:2px solid #d8d8d8;
+}
+
+.rare{
+    border:2px solid #7ec8ff;
+}
+
+.epic{
+    border:2px solid #c27cff;
+    box-shadow:0 0 18px rgba(194,124,255,.35);
+}
+
+.legendary{
+    border:2px solid gold;
+    box-shadow:0 0 22px rgba(255,215,0,.45);
+}
