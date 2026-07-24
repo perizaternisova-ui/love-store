@@ -5,70 +5,141 @@
 }
 
 body{
-    font-family:Arial, sans-serif;
-    background:linear-gradient(135deg,#ffd6e8,#ffeef7);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
+    overflow:hidden;
+    background:linear-gradient(135deg,#ffe7f2,#ffd6eb,#ffeef7);
 }
 
-.container{
+.background{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top,#ffffff90,transparent 40%),
+    linear-gradient(135deg,#ffd9ec,#fff4fa);
+}
+
+.card{
+    position:relative;
+    z-index:2;
     width:90%;
-    max-width:350px;
-    background:rgba(255,255,255,.35);
+    max-width:360px;
+
+    padding:40px 30px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.45);
+
     backdrop-filter:blur(20px);
-    border-radius:25px;
-    padding:35px;
+
+    box-shadow:0 20px 50px rgba(255,105,180,.18);
+
     text-align:center;
-    box-shadow:0 15px 40px rgba(255,105,180,.2);
+
+    animation:show .8s ease;
+}
+
+.heart{
+
+    font-size:70px;
+
+    animation:heartBeat 2s infinite;
 }
 
 h1{
-    color:#ff4f93;
-    font-size:40px;
-    margin-bottom:20px;
+
+    margin-top:10px;
+
+    color:#ff4d8d;
+
+    font-size:38px;
+
 }
 
 p{
+
+    margin:25px 0;
+
     font-size:20px;
+
     color:#555;
-    margin-bottom:30px;
+
     line-height:1.6;
+
 }
 
 button{
+
     width:100%;
-    border:none;
-    border-radius:18px;
-    background:#ff4f93;
-    color:white;
+
     padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:linear-gradient(90deg,#ff6ea8,#ff4d8d);
+
+    color:white;
+
     font-size:20px;
+
+    font-weight:bold;
+
     cursor:pointer;
+
     transition:.3s;
+
 }
 
 button:hover{
-    background:#ff2c7b;
+
     transform:scale(1.03);
+
 }
 
-@keyframes float{
+button:active{
 
-0%{
-transform:translateY(0) rotate(0deg);
+    transform:scale(.98);
+
+}
+
+@keyframes show{
+
+from{
+
 opacity:0;
+
+transform:translateY(40px);
+
 }
 
-20%{
+to{
+
 opacity:1;
-}
 
-100%{
-transform:translateY(-120vh) rotate(360deg);
-opacity:0;
-}
+transform:translateY(0);
 
 }
 
+}
+
+@keyframes heartBeat{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.15);
+
+}
+
+}
