@@ -170,6 +170,13 @@ rarity:"legendary"
 
 };
 
+const rarityNames = {
+    common: "⚪ Обычный",
+    rare: "🔵 Редкий",
+    epic: "🟣 Эпический",
+    legendary: "👑 Легендарный"
+};
+
 // ===============================
 // СОЗДАНИЕ КАРТОЧЕК
 // ===============================
@@ -193,8 +200,10 @@ function createCards(category, containerId){
 
     <p>${item.description}</p>
 
-    <div class="price">
-        ❤️ ${item.price}
+    <div class="price">❤️ ${item.price}</div>
+
+    <div class="rarity">
+        ${rarityNames[item.rarity]}
     </div>
 
     <button class="buy-btn">
