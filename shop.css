@@ -175,3 +175,10 @@
 .buy-btn:active{
     transform:scale(.96);
 }
+
+.rarity{
+    margin:12px 0 16px;
+    font-size:13px;
+    font-weight:600;
+    color:#888;
+}
