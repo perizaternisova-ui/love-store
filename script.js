@@ -25,3 +25,147 @@ function createHeart() {
 }
 
 setInterval(createHeart, 700);
+
+// ===============================
+// LOVE STORE
+// ===============================
+
+const shop = {
+
+romance: [
+
+{
+emoji:"💋",
+title:"100 поцелуев",
+description:"Сто поцелуев только для тебя ❤️",
+price:80,
+rarity:"common"
+},
+
+{
+emoji:"🤗",
+title:"30 минут объятий",
+description:"Без телефона. Только мы.",
+price:90,
+rarity:"common"
+},
+
+{
+emoji:"💌",
+title:"Любовное письмо",
+description:"Написанное вручную.",
+price:120,
+rarity:"rare"
+},
+
+{
+emoji:"🌙",
+title:"Романтический вечер",
+description:"Свечи, музыка и только мы.",
+price:250,
+rarity:"epic"
+},
+
+{
+emoji:"🛁",
+title:"Романтическая ванна",
+description:"Пена, свечи и атмосфера.",
+price:350,
+rarity:"legendary"
+},
+
+{
+emoji:"💞",
+title:"Сладость или страсть?",
+description:"Сюрприз 😏",
+price:300,
+rarity:"legendary"
+}
+
+],
+
+food:[
+
+{
+emoji:"☕",
+title:"Кофе с любовью",
+description:"Твой любимый кофе.",
+price:70,
+rarity:"common"
+},
+
+{
+emoji:"🍰",
+title:"Любимая сладость",
+description:"Выбирай любую ❤️",
+price:100,
+rarity:"common"
+},
+
+{
+emoji:"🍕",
+title:"Вкусный ужин",
+description:"Приготовлю специально для тебя.",
+price:220,
+rarity:"rare"
+}
+
+],
+
+care:[
+
+{
+emoji:"💆",
+title:"Массаж",
+description:"30 минут расслабления.",
+price:180,
+rarity:"epic"
+}
+
+],
+
+creative:[
+
+{
+emoji:"🎨",
+title:"Смешной портрет",
+description:"Нарисую тебя 😄",
+price:150,
+rarity:"rare"
+},
+
+{
+emoji:"🎤",
+title:"Музыкальное выступление",
+description:"Мини-концерт только для тебя.",
+price:300,
+rarity:"legendary"
+}
+
+],
+
+together:[
+
+{
+emoji:"🎬",
+title:"Ты выбираешь фильм",
+description:"Сегодня выбор полностью за тобой.",
+price:100,
+rarity:"common"
+}
+
+],
+
+exclusive:[
+
+{
+emoji:"🎁",
+title:"Секретный подарок",
+description:"Что внутри — узнаешь позже.",
+price:"???",
+rarity:"legendary"
+}
+
+]
+
+};
