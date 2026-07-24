@@ -1,3 +1,4 @@
+alert("Love Store работает ❤️");
 function createHeart() {
 
 const heart = document.createElement("div");
