@@ -207,36 +207,6 @@ transform:translateY(-2px);
 
 }
 
-15%{
-
-opacity:1;
-
-}
-
-50%{
-
-transform:
-translateY(-45vh)
-translateX(20px)
-rotate(10deg)
-scale(1);
-
-}
-
-100%{
-
-transform:
-translateY(-120vh)
-translateX(-25px)
-rotate(-15deg)
-scale(1.2);
-
-opacity:0;
-
-}
-
-}
-
 .love-heart{
 
 position:fixed;
