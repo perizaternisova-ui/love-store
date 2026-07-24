@@ -230,16 +230,42 @@ createCards(shop.creative,"creative");
 createCards(shop.together,"together");
 createCards(shop.exclusive,"exclusive");
 
+const modal = document.getElementById("purchaseModal");
+
+const modalEmoji = document.getElementById("modalEmoji");
+
+const modalTitle = document.getElementById("modalTitle");
+
+const modalDescription = document.getElementById("modalDescription");
+
+const modalPrice = document.getElementById("modalPrice");
+
+const cancelBtn = document.getElementById("cancelBtn");
+
+const confirmBtn = document.getElementById("confirmBtn");
+
+let currentItem = null;
+
 function openPurchaseModal(item){
 
-    alert(`
-${item.emoji}
+    currentItem = item;
 
-${item.title}
+    modalEmoji.textContent = item.emoji;
 
-${item.description}
+    modalTitle.textContent = item.title;
 
-Стоимость ❤️ ${item.price}
-`);
+    modalDescription.textContent = item.description;
+
+    modalPrice.textContent = `❤️ ${item.price}`;
+
+    modal.classList.add("show");
+
+}
+
+cancelBtn.addEventListener("click",()=>{
+
+    modal.classList.remove("show");
+
+});
 
 }
