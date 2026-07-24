@@ -188,19 +188,21 @@ function createCards(category, containerId){
 
         card.innerHTML=`
 
-            <div class="gift-icon">${item.emoji}</div>
+            card.innerHTML = `
+<div class="emoji">${item.emoji}</div>
 
-            <h3>${item.title}</h3>
+<h3>${item.name}</h3>
 
-            <p>${item.description}</p>
+<p>${item.description}</p>
 
-            <div class="price">❤️ ${item.price}</div>
+<div class="price">
+❤️ ${item.price}
+</div>
 
-            <button class="buy-btn">
-                Получить
-            </button>
-
-        `;
+<button class="buy-btn">
+Получить ✨
+</button>
+`;
 
         container.appendChild(card);
 
