@@ -25,3 +25,5 @@ heart.remove();
 }
 
 setInterval(createHeart,900);
+
+это script.js
