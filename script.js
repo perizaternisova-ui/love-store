@@ -169,3 +169,48 @@ rarity:"legendary"
 ]
 
 };
+
+// ===============================
+// СОЗДАНИЕ КАРТОЧЕК
+// ===============================
+
+function createCards(category, containerId){
+
+    const container = document.getElementById(containerId);
+
+    if(!container) return;
+
+    category.forEach(item=>{
+
+        const card=document.createElement("div");
+
+        card.className=`gift-card ${item.rarity}`;
+
+        card.innerHTML=`
+
+            <div class="gift-icon">${item.emoji}</div>
+
+            <h3>${item.title}</h3>
+
+            <p>${item.description}</p>
+
+            <div class="price">❤️ ${item.price}</div>
+
+            <button class="buy-btn">
+                Получить
+            </button>
+
+        `;
+
+        container.appendChild(card);
+
+    });
+
+}
+
+createCards(shop.romance,"romance");
+createCards(shop.food,"food");
+createCards(shop.care,"care");
+createCards(shop.creative,"creative");
+createCards(shop.together,"together");
+createCards(shop.exclusive,"exclusive");
