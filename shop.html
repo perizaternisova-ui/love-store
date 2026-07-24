@@ -1,101 +1,65 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Love Store • Магазин</title>
+<title>Love Store — Магазин</title>
 
-<link rel="stylesheet" href="style.css?v=2">
-
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div id="hearts"></div>
 
-<div class="background"></div>
+<header class="page-header">
+    <h1>🛍 Love Store</h1>
+    <p>Выбирай подарки для любимого ❤️</p>
+</header>
 
-<div class="card">
+<main class="shop">
 
-<h1>🛍 Love Store</h1>
+<section>
+<h2>🌹 Романтика</h2>
+<div id="romance" class="cards"></div>
+</section>
 
-<p>Подарки и сюрпризы только для тебя ❤️</p>
+<section>
+<h2>🍰 Вкусности</h2>
+<div id="food" class="cards"></div>
+</section>
 
-<!-- ===================== -->
-<!-- РОМАНТИКА -->
-<!-- ===================== -->
+<section>
+<h2>💆 Забота</h2>
+<div id="care" class="cards"></div>
+</section>
 
-<h2 class="category">🌹 Романтика</h2>
+<section>
+<h2>🎨 Творчество</h2>
+<div id="creative" class="cards"></div>
+</section>
 
-<div id="romance"></div>
+<section>
+<h2>🎮 Вместе</h2>
+<div id="together" class="cards"></div>
+</section>
 
-<!-- ===================== -->
-<!-- ВКУСНОСТИ -->
-<!-- ===================== -->
+<section>
+<h2>💎 Эксклюзив</h2>
+<div id="exclusive" class="cards"></div>
+</section>
 
-<h2 class="category">🍽 Вкусности</h2>
-
-<div id="food"></div>
-
-<!-- ===================== -->
-<!-- ЗАБОТА -->
-<!-- ===================== -->
-
-<h2 class="category">💆 Забота</h2>
-
-<div id="care"></div>
-
-<!-- ===================== -->
-<!-- ТВОРЧЕСТВО -->
-<!-- ===================== -->
-
-<h2 class="category">🎨 Творчество</h2>
-
-<div id="creative"></div>
-
-<!-- ===================== -->
-<!-- ВМЕСТЕ -->
-<!-- ===================== -->
-
-<h2 class="category">🎮 Вместе</h2>
-
-<div id="together"></div>
-
-<!-- ===================== -->
-<!-- ЭКСКЛЮЗИВ -->
-<!-- ===================== -->
-
-<h2 class="category">💎 Эксклюзив</h2>
-
-<div id="exclusive"></div>
+</main>
 
 <nav class="bottom-nav">
+<a href="index.html">🏠</a>
+<a href="shop.html">🛍</a>
+<a href="love.html">❤️</a>
+<a href="profile.html">👤</a>
+</nav>
 
-<button class="nav-btn"
-onclick="location.href='index.html'">
-🏠<br>Главная
-</button>
-
-<button class="nav-btn active">
-🛍️<br>Магазин
-</button>
-
-<button class="nav-btn">
-❤️<br>Любовь
-</button>
-
-<button class="nav-btn">
-👤<br>Профиль
-</button>
-
-</div>
-
-<script src="script.js?v=2"></script>
+<script src="script.js"></script>
 
 </body>
-
 </html>
