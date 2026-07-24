@@ -182,27 +182,25 @@ function createCards(category, containerId){
 
     category.forEach(item=>{
 
-        const card=document.createElement("div");
+        const card = document.createElement("div");
 
-        card.className=`gift-card ${item.rarity}`;
+        card.className = `card ${item.rarity}`;
 
-        card.innerHTML=`
+        card.innerHTML = `
+            <div class="emoji">${item.emoji}</div>
 
-            card.innerHTML = `
-<div class="emoji">${item.emoji}</div>
+            <h3>${item.name}</h3>
 
-<h3>${item.name}</h3>
+            <p>${item.description}</p>
 
-<p>${item.description}</p>
+            <div class="price">
+                ❤️ ${item.price}
+            </div>
 
-<div class="price">
-❤️ ${item.price}
-</div>
-
-<button class="buy-btn">
-Получить ✨
-</button>
-`;
+            <button class="buy-btn">
+                Получить ✨
+            </button>
+        `;
 
         container.appendChild(card);
 
