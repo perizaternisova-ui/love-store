@@ -211,6 +211,12 @@ function createCards(category, containerId){
     </button>
 `;
 
+const button = card.querySelector(".buy-btn");
+
+button.addEventListener("click", () => {
+    openPurchaseModal(item);
+});
+
         container.appendChild(card);
 
     });
@@ -223,3 +229,17 @@ createCards(shop.care,"care");
 createCards(shop.creative,"creative");
 createCards(shop.together,"together");
 createCards(shop.exclusive,"exclusive");
+
+function openPurchaseModal(item){
+
+    alert(`
+${item.emoji}
+
+${item.title}
+
+${item.description}
+
+Стоимость ❤️ ${item.price}
+`);
+
+}
