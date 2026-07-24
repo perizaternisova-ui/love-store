@@ -1,3 +1,4 @@
+
 /* ---------- LOVE WALLET ---------- */
 
 .love-wallet{
@@ -181,4 +182,138 @@
     font-size:13px;
     font-weight:600;
     color:#888;
+}
+
+/* ==========================================
+   МОДАЛЬНОЕ ОКНО
+========================================== */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    backdrop-filter:blur(6px);
+
+    z-index:1000;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-content{
+
+    width:320px;
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.2);
+
+    animation:popup .25s ease;
+}
+
+@keyframes popup{
+
+from{
+
+transform:scale(.8);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+.modal-emoji{
+
+font-size:60px;
+
+margin-bottom:15px;
+
+}
+
+.modal-content h2{
+
+margin-bottom:10px;
+
+}
+
+.modal-content p{
+
+color:#666;
+
+margin-bottom:18px;
+
+}
+
+.modalPrice{
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#ff4d88;
+
+margin-bottom:20px;
+
+}
+
+.modalButtons{
+
+display:flex;
+
+gap:12px;
+
+}
+
+.modalButtons button{
+
+flex:1;
+
+border:none;
+
+padding:14px;
+
+border-radius:14px;
+
+font-size:16px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+.cancelBtn{
+
+background:#ececec;
+
+}
+
+.confirmBtn{
+
+background:#ff4d88;
+
+color:white;
+
 }
