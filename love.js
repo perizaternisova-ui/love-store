@@ -1,4 +1,4 @@
-const startDate = new Date("2026-07-01");
+const startDate = new Date("2023-07-27");
 
 const today = new Date();
 
