@@ -6,28 +6,40 @@ function loadCart() {
 
     if (cart.length === 0) {
         container.innerHTML = "<p>Корзина пока пустая.</p>";
+        document.getElementById("totalPrice").textContent = "Итого: ❤️ 0";
         return;
     }
 
-    container.innerHTML += `
-    <div class="cart-item">
+    container.innerHTML = "";
 
-        <div style="font-size:40px">${item.emoji}</div>
+    let total = 0;
 
-        <div class="cart-title">${item.title}</div>
+    cart.forEach((item, index) => {
 
-        <div>${item.description}</div>
+        total += Number(item.price) || 0;
 
-        <div class="cart-price">❤️ ${item.price}</div>
+        container.innerHTML += `
+            <div class="cart-item">
 
-        <button class="remove-btn" onclick="removeItem(${index})">
-            🗑️ Удалить
-        </button>
+                <div style="font-size:40px">${item.emoji}</div>
 
-    </div>
-`;
+                <div class="cart-title">${item.title}</div>
+
+                <div>${item.description}</div>
+
+                <div class="cart-price">❤️ ${item.price}</div>
+
+                <button class="remove-btn" onclick="removeItem(${index})">
+                    🗑️ Удалить
+                </button>
+
+            </div>
+        `;
 
     });
+
+    document.getElementById("totalPrice").textContent =
+        `Итого: ❤️ ${total}`;
 
 }
 
