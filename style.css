@@ -205,6 +205,11 @@ section h2{
     transition: .2s;
 }
 
+.icon{
+    font-size: 22px;
+    line-height: 1;
+}
+
 .nav-btn.active{
     color: #ff4f8b;
 }
