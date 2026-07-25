@@ -172,49 +172,45 @@ section h2{
 /* ---------- Нижнее меню ---------- */
 
 .bottom-nav{
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
 
-    position:fixed;
+    width: min(430px,92%);
+    height: 68px;
 
-    bottom:15px;
+    background: rgba(255,255,255,.8);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-    left:50%;
+    border-radius: 24px;
 
-    transform:translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
-    width:min(430px,92%);
+    box-shadow: 0 8px 25px rgba(0,0,0,.1);
 
-    height:68px;
-
-    background:rgba(255,255,255,.8);
-
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-
-    border-radius:24px;
-
-    display:flex;
-
-    justify-content:space-around;
-
-    align-items:center;
-
-    box-shadow:0 8px 25px rgba(0,0,0,.1);
-
-    z-index:100;
+    z-index: 100;
 }
 
-.bottom-nav a{
-
-    text-decoration:none;
-
-    font-size:30px;
-
-    transition:.2s;
+.nav-btn{
+    text-decoration: none;
+    color: #777;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+    transition: .2s;
 }
 
-.bottom-nav a:active{
+.nav-btn.active{
+    color: #ff4f8b;
+}
 
-    transform:scale(.85);
+.nav-btn:active{
+    transform: scale(.9);
 }
 
 /* ---------- Сердечки ---------- */
