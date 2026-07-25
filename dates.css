@@ -1,0 +1,56 @@
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#fff5f8;
+    color:#333;
+}
+
+.page-header{
+    background:#ff4d88;
+    color:white;
+    text-align:center;
+    padding:20px;
+    border-radius:0 0 25px 25px;
+}
+
+main{
+    padding:20px;
+}
+
+.date-card{
+    background:white;
+    border-radius:20px;
+    padding:18px;
+    margin-bottom:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.date-card h2{
+    margin:0;
+    color:#ff4d88;
+    font-size:22px;
+}
+
+.date-card p{
+    margin-top:10px;
+    font-size:18px;
+    color:#666;
+}
+
+#addDate{
+    width:100%;
+    margin-top:15px;
+    padding:18px;
+    border:none;
+    border-radius:20px;
+    background:#ff4d88;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(255,77,136,.35);
+}
+
+#addDate:active{
+    transform:scale(.98);
+}
