@@ -85,47 +85,6 @@ flex-direction:column;
 gap:15px;
 }
 
-#addLetter{
-
-position:fixed;
-
-right:22px;
-
-bottom:90px;
-
-width:58px;
-
-height:58px;
-
-border:none;
-
-border-radius:50%;
-
-background:white;
-
-color:#ff4d88;
-
-font-size:36px;
-
-font-weight:300;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-box-shadow:0 12px 25px rgba(0,0,0,.15);
-
-transition:.2s;
-
-}
-
-#addLetter:active{
-
-transform:scale(.95);
-
-}
 
 .letter-card{
 
