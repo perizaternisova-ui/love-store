@@ -216,7 +216,11 @@ function createCards(category, containerId){
 const button = card.querySelector(".buy-btn");
 
 button.addEventListener("click", () => {
-    openPurchaseModal(item);
+
+    cart.push(item);
+
+    alert(`💖 "${item.title}" добавлен в корзину!`);
+
 });
 
         container.appendChild(card);
