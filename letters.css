@@ -161,3 +161,38 @@ transform:translateY(0);
 }
 
 }
+
+.letter-card{
+    background:white;
+    border-radius:20px;
+    padding:18px;
+    margin-top:18px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.letter-title{
+    font-size:20px;
+    font-weight:700;
+    color:#ff4d88;
+}
+
+.letter-date{
+    color:#888;
+    font-size:14px;
+    margin:8px 0;
+}
+
+.letter-text{
+    white-space:pre-wrap;
+    line-height:1.5;
+}
+
+.delete-btn{
+    margin-top:15px;
+    border:none;
+    background:#ff4d88;
+    color:white;
+    padding:10px 16px;
+    border-radius:12px;
+    cursor:pointer;
+}
