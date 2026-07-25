@@ -89,34 +89,40 @@ gap:15px;
 
 position:fixed;
 
-right:20px;
+right:22px;
 
 bottom:90px;
 
-width:65px;
+width:58px;
 
-height:65px;
+height:58px;
 
 border:none;
 
 border-radius:50%;
 
-background:linear-gradient(135deg,#ff5f9e,#ff8dbf);
+background:white;
 
-color:white;
+color:#ff4d88;
 
-font-size:34px;
+font-size:36px;
 
-font-weight:bold;
+font-weight:300;
 
-box-shadow:0 15px 30px rgba(255,95,158,.35);
+display:flex;
 
-transition:.25s;
+justify-content:center;
+
+align-items:center;
+
+box-shadow:0 12px 25px rgba(0,0,0,.15);
+
+transition:.2s;
 
 }
 
 #addLetter:active{
 
-transform:scale(.93);
+transform:scale(.95);
 
 }
