@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Письма ❤️</title>
+
+<link rel="stylesheet" href="letters.css">
+
+</head>
+
+<body>
+
+<header class="page-header">
+    <h1>💌 Письма</h1>
+</header>
+
+<main>
+
+<div id="lettersList"></div>
+
+<button id="addLetter">
+    ➕ Новое письмо
+</button>
+
+</main>
+
+<div id="letterModal" class="modal">
+
+<div class="modal-content">
+
+<h2 id="modalTitle">Новое письмо ❤️</h2>
+
+<input
+id="letterTitle"
+type="text"
+placeholder="Название письма">
+
+<textarea
+id="letterText"
+placeholder="Напиши всё, что хочешь сказать..."
+rows="12"></textarea>
+
+<div class="modal-buttons">
+
+<button id="cancelBtn">
+Отмена
+</button>
+
+<button id="saveBtn">
+Сохранить
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="letters.js"></script>
+
+</body>
+
+</html>
