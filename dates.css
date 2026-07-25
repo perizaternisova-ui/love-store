@@ -1,192 +1,171 @@
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#fff5f8;
-    color:#333;
+let dates = JSON.parse(localStorage.getItem("loveDates"));
+
+if (!dates) {
+    dates = [
+        {
+            title: "💕 Начало отношений",
+            date: "2023-07-27"
+        },
+        {
+            title: "💋 Первый поцелуй",
+            date: ""
+        },
+        {
+            title: "✈️ Первая поездка",
+            date: ""
+        },
+        {
+            title: "📸 Первое совместное фото",
+            date: ""
+        }
+    ];
+
+    save();
 }
 
-.page-header{
-    background:#ff4d88;
-    color:white;
-    text-align:center;
-    padding:20px;
-    border-radius:0 0 25px 25px;
+const list = document.getElementById("datesList");
+
+const modal = document.getElementById("dateModal");
+
+const titleInput = document.getElementById("titleInput");
+
+const dateInput = document.getElementById("dateInput");
+
+const saveBtn = document.getElementById("saveBtn");
+
+const cancelBtn = document.getElementById("cancelBtn");
+
+const addBtn = document.getElementById("addDate");
+
+const modalTitle = document.getElementById("modalTitle");
+
+let editIndex = null;
+
+function save() {
+    localStorage.setItem("loveDates", JSON.stringify(dates));
 }
 
-main{
-    padding:20px;
-}
+function formatDate(date) {
 
-.date-card{
-    background:white;
-    border-radius:20px;
-    padding:18px;
-    margin-bottom:15px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-}
+    if (!date) return "Дата не выбрана";
 
-.date-card h2{
-    margin:0;
-    color:#ff4d88;
-    font-size:22px;
-}
-
-.date-card p{
-    margin-top:10px;
-    font-size:18px;
-    color:#666;
-}
-
-#addDate{
-    width:100%;
-    margin-top:15px;
-    padding:18px;
-    border:none;
-    border-radius:20px;
-    background:#ff4d88;
-    color:white;
-    font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
-    box-shadow:0 8px 20px rgba(255,77,136,.35);
-}
-
-#addDate:active{
-    transform:scale(.98);
-}
-
-.actions{
-    display:flex;
-    justify-content:flex-end;
-    gap:10px;
-    margin-top:15px;
-}
-
-.actions button{
-    width:45px;
-    height:45px;
-    border:none;
-    border-radius:50%;
-    background:#ffe6ef;
-    font-size:20px;
-    cursor:pointer;
-}
-
-.modal{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.4);
-
-    display:none;
-
-    justify-content:center;
-    align-items:center;
-
-    z-index:1000;
-}
-
-.modal.show{
-    display:flex;
-}
-
-.modal-content{
-
-    width:90%;
-    max-width:350px;
-
-    background:white;
-
-    border-radius:25px;
-
-    padding:25px;
-
-    animation:popup .25s;
-}
-
-@keyframes popup{
-
-from{
-
-transform:scale(.8);
-
-opacity:0;
+    return new Date(date).toLocaleDateString("ru-RU", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    });
 
 }
 
-to{
+function render() {
 
-transform:scale(1);
+    list.innerHTML = "";
 
-opacity:1;
+    dates.forEach((item, index) => {
 
-}
+        list.innerHTML += `
+        <div class="date-card">
 
-}
+            <h2>${item.title}</h2>
 
-.modal h2{
+            <p>📅 ${formatDate(item.date)}</p>
 
-margin-top:0;
+            <div class="actions">
 
-color:#ff4d88;
+                <button onclick="editDate(${index})">✏️</button>
 
-text-align:center;
+                <button onclick="deleteDate(${index})">🗑️</button>
 
-}
+            </div>
 
-.modal input{
+        </div>
+        `;
 
-width:100%;
-
-padding:15px;
-
-margin-top:15px;
-
-border:2px solid #ffd5e5;
-
-border-radius:15px;
-
-font-size:16px;
-
-box-sizing:border-box;
+    });
 
 }
 
-.modal-buttons{
+function openModal() {
 
-display:flex;
-
-gap:10px;
-
-margin-top:20px;
+    modal.classList.add("show");
 
 }
 
-.modal-buttons button{
+function closeModal() {
 
-flex:1;
-
-padding:15px;
-
-border:none;
-
-border-radius:15px;
-
-font-size:17px;
-
-font-weight:bold;
+    modal.classList.remove("show");
 
 }
 
-#cancelBtn{
+addBtn.onclick = () => {
 
-background:#eee;
+    editIndex = null;
+
+    modalTitle.textContent = "Новая дата ❤️";
+
+    titleInput.value = "";
+
+    dateInput.value = "";
+
+    openModal();
+
+};
+
+saveBtn.onclick = () => {
+
+    if (titleInput.value.trim() === "") return;
+
+    const item = {
+        title: titleInput.value,
+        date: dateInput.value
+    };
+
+    if (editIndex === null) {
+
+        dates.push(item);
+
+    } else {
+
+        dates[editIndex] = item;
+
+    }
+
+    save();
+
+    render();
+
+    closeModal();
+
+};
+
+cancelBtn.onclick = closeModal;
+
+function editDate(index) {
+
+    editIndex = index;
+
+    modalTitle.textContent = "Редактировать ❤️";
+
+    titleInput.value = dates[index].title;
+
+    dateInput.value = dates[index].date;
+
+    openModal();
 
 }
 
-#saveBtn{
+function deleteDate(index) {
 
-background:#ff4d88;
+    if (confirm("Удалить эту дату?")) {
 
-color:white;
+        dates.splice(index, 1);
+
+        save();
+
+        render();
+
+    }
 
 }
+
+render();
