@@ -9,21 +9,23 @@ function loadCart() {
         return;
     }
 
-    container.innerHTML = "";
+    container.innerHTML += `
+    <div class="cart-item">
 
-    cart.forEach((item, index) => {
+        <div style="font-size:40px">${item.emoji}</div>
 
-        container.innerHTML += `
-            <div class="cart-item">
-                <div style="font-size:40px">${item.emoji}</div>
+        <div class="cart-title">${item.title}</div>
 
-                <div class="cart-title">${item.title}</div>
+        <div>${item.description}</div>
 
-                <div>${item.description}</div>
+        <div class="cart-price">❤️ ${item.price}</div>
 
-                <div class="cart-price">❤️ ${item.price}</div>
-            </div>
-        `;
+        <button class="remove-btn" onclick="removeItem(${index})">
+            🗑️ Удалить
+        </button>
+
+    </div>
+`;
 
     });
 
