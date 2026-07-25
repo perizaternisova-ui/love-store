@@ -1,7 +1,6 @@
 const lettersList = document.getElementById("lettersList");
 
 const saveBtn = document.getElementById("saveBtn");
-const cancelBtn = document.getElementById("cancelBtn");
 
 const category = document.getElementById("letterCategory");
 const title = document.getElementById("letterTitle");
