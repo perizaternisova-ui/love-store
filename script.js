@@ -1,5 +1,7 @@
 const heartsContainer = document.getElementById("hearts");
 
+let cart = [];
+
 function createHeart() {
 
     const heart = document.createElement("div");
