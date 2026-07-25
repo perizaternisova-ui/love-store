@@ -20,11 +20,21 @@ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }
 
 .page-header{
-    background:#ff4d88;
-    color:white;
-    text-align:center;
-    padding:20px;
-    border-radius:0 0 25px 25px;
+
+text-align:center;
+
+padding:25px;
+
+margin-bottom:15px;
+
+background:rgba(255,255,255,.35);
+
+backdrop-filter:blur(18px);
+
+border-radius:25px;
+
+box-shadow:0 10px 30px rgba(255,105,180,.15);
+
 }
 
 main{
