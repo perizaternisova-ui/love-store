@@ -22,27 +22,61 @@ color:#ff4d88;
 }
 
 .tabs{
+
 display:flex;
-gap:10px;
+
+gap:12px;
+
 overflow-x:auto;
-padding-bottom:10px;
-margin-bottom:20px;
+
+padding-bottom:12px;
+
+margin-bottom:25px;
+
+scrollbar-width:none;
+
+}
+
+.tabs::-webkit-scrollbar{
+
+display:none;
+
 }
 
 .tab{
+
 border:none;
-padding:12px 18px;
-border-radius:18px;
-background:white;
+
+padding:14px 22px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.65);
+
+backdrop-filter:blur(16px);
+
 font-size:16px;
+
 font-weight:600;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+color:#444;
+
 white-space:nowrap;
+
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+transition:.25s;
+
 }
 
 .tab.active{
-background:#ff4d88;
+
+background:linear-gradient(135deg,#ff5f9e,#ff87b8);
+
 color:white;
+
+box-shadow:0 12px 25px rgba(255,95,158,.35);
+
 }
 
 #lettersList{
@@ -52,15 +86,37 @@ gap:15px;
 }
 
 #addLetter{
+
 position:fixed;
+
 right:20px;
+
 bottom:90px;
-width:60px;
-height:60px;
+
+width:65px;
+
+height:65px;
+
 border:none;
+
 border-radius:50%;
-background:#ff4d88;
+
+background:linear-gradient(135deg,#ff5f9e,#ff8dbf);
+
 color:white;
-font-size:30px;
-box-shadow:0 10px 25px rgba(255,77,136,.35);
+
+font-size:34px;
+
+font-weight:bold;
+
+box-shadow:0 15px 30px rgba(255,95,158,.35);
+
+transition:.25s;
+
+}
+
+#addLetter:active{
+
+transform:scale(.93);
+
 }
