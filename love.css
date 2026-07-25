@@ -41,6 +41,28 @@ main{
     margin-top:15px;
 }
 
+.love-menu{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:25px;
+}
+
+.love-menu button{
+    background:white;
+    border:none;
+    border-radius:18px;
+    padding:18px;
+    font-size:18px;
+    font-weight:600;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.2s;
+}
+
+.love-menu button:active{
+    transform:scale(.97);
+}
+
 .bottom-nav{
     position:fixed;
     bottom:0;
