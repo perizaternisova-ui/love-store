@@ -11,7 +11,6 @@ let letters = JSON.parse(localStorage.getItem("letters")) || [];
 renderLetters();
 
 saveBtn.addEventListener("click", () => {
-    alert("Кнопка работает!");
 
     if(title.value.trim()==="" || text.value.trim()===""){
         alert("Заполни название и письмо ❤️");
