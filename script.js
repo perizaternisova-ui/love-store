@@ -267,5 +267,3 @@ cancelBtn.addEventListener("click",()=>{
     modal.classList.remove("show");
 
 });
-
-}
