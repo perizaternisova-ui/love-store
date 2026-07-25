@@ -164,7 +164,7 @@ exclusive:[
 emoji:"🎁",
 title:"Секретный подарок",
 description:"Что внутри — узнаешь позже.",
-price:"???",
+price:"500",
 rarity:"legendary"
 }
 
