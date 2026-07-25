@@ -28,6 +28,10 @@ main{
 .love-card h2{
     margin-top:0;
     color:#ff4d88;
+    font-size:56px;
+    font-weight:700;
+    line-height:1.2;
+    margin-bottom:30px;
 }
 
 #daysTogether{
