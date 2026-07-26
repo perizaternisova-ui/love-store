@@ -64,3 +64,43 @@ main{
 .remove-btn:hover{
     opacity:.9;
 }
+
+#totalPrice{
+    margin-top:25px;
+    padding:18px;
+    border-radius:18px;
+    background:white;
+    text-align:center;
+    font-size:22px;
+    font-weight:700;
+    color:#ff4f81;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.checkout-btn{
+    width:100%;
+    margin-top:20px;
+    padding:18px;
+    border:none;
+    border-radius:20px;
+    background:linear-gradient(135deg,#ff4f81,#ff7aa8);
+    color:white;
+    font-size:18px;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:0 12px 25px rgba(255,80,130,.35);
+    transition:.25s;
+}
+
+.checkout-btn:hover{
+    transform:translateY(-3px);
+}
+
+.checkout-btn:active{
+    transform:scale(.98);
+}
+
+.checkout-btn span{
+    font-size:22px;
+    margin-right:8px;
+}
