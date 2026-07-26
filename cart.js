@@ -56,3 +56,43 @@ function removeItem(index){
     loadCart();
 
 }
+
+document.getElementById("checkoutBtn").addEventListener("click", function () {
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (cart.length === 0) {
+        alert("🛒 Корзина пуста!");
+        return;
+    }
+
+    let total = 0;
+
+    cart.forEach(item => {
+        total += Number(item.price) || 0;
+    });
+
+    let balance = Number(localStorage.getItem("loveBalance")) || 0;
+
+    if (balance < total) {
+        alert("💔 Недостаточно сердечек!");
+        return;
+    }
+
+    balance -= total;
+
+    localStorage.setItem("loveBalance", balance);
+
+    localStorage.removeItem("cart");
+
+    loadCart();
+
+    document.getElementById("orderMessage").innerHTML = `
+        <div class="success-box">
+            <h2>🎉 Заказ оформлен!</h2>
+            <p>❤️ Списано: <b>${total}</b></p>
+            <p>❤️ Осталось: <b>${balance}</b></p>
+            <p>Спасибо за заказ 💖</p>
+        </div>
+    `;
+});
