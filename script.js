@@ -685,7 +685,7 @@ wish:[
 {
 emoji:"💖",
 title:"Любое желание",
-description:"Исполню одно разумное желание.",
+description:"Исполню одно неразумное желание.",
 price:1200,
 rarity:"mythic"
 },
