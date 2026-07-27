@@ -9,12 +9,6 @@ if (balanceElement) {
     balanceElement.textContent = localStorage.getItem("loveBalance");
 }
 
-// Показываем баланс
-const balanceElement = document.getElementById("balance");
-
-if (balanceElement) {
-    balanceElement.textContent = localStorage.getItem("loveBalance");
-}
 
 let cart = [];
 
