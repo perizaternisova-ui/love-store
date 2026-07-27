@@ -832,13 +832,16 @@ cancelBtn.addEventListener("click",()=>{
 
 
 const accessBtn = document.getElementById("accessBtn");
-const card = document.querySelector(".card");
+const welcomeCard = document.getElementById("welcomeCard");
 const homeContent = document.getElementById("homeContent");
+const bottomNav = document.getElementById("bottomNav");
 
 accessBtn.addEventListener("click", () => {
 
-    card.style.display = "none";
+    welcomeCard.style.display = "none";
 
     homeContent.style.display = "block";
+
+    bottomNav.style.display = "flex";
 
 });
