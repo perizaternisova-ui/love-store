@@ -83,7 +83,7 @@ document.getElementById("checkoutBtn").addEventListener("click", function () {
 
 localStorage.setItem("loveBalance", balance);
 
-fetch("https://script.google.com/macros/library/d/1aX_HZMf5LwAB4njjmXGPSGI3NohougZyEUlYhMLZBdOYgnqPQO2JdcPu/2", {
+fetch("https://script.google.com/macros/s/AKfycbwBARC9crjIfEqQgxCOyGkfryToz01nCV3kTggPQOiartrfA8Zzucxg9ZpZLOVbexo3/exec", {
     method: "POST",
     mode: "no-cors",
     headers: {
