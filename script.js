@@ -829,3 +829,16 @@ cancelBtn.addEventListener("click",()=>{
     modal.classList.remove("show");
 
 });
+
+
+const accessBtn = document.getElementById("accessBtn");
+const card = document.querySelector(".card");
+const homeContent = document.getElementById("homeContent");
+
+accessBtn.addEventListener("click", () => {
+
+    card.style.display = "none";
+
+    homeContent.style.display = "block";
+
+});
