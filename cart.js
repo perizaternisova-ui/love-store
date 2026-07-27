@@ -107,3 +107,8 @@ document.getElementById("checkoutBtn").addEventListener("click", function () {
         </div>
     `;
 });
+
+function doGet() {
+  return ContentService
+    .createTextOutput("Love Store API работает");
+}
