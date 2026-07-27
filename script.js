@@ -674,7 +674,7 @@ rarity:"mythic"
 emoji:"✈️",
 title:"Мини-путешествие",
 description:"Небольшая поездка или прогулка в новое место.",
-price:1500,
+price:500,
 rarity:"mythic"
 }
 
@@ -684,16 +684,16 @@ wish:[
 
 {
 emoji:"💖",
-title:"Любое желание",
-description:"Исполню одно неразумное желание.",
-price:1200,
+title:"Твое любимое желание",
+description:"Исполню твое любимое желание.",
+price:1800,
 rarity:"mythic"
 },
 
 {
 emoji:"🥰",
 title:"День без отказов",
-description:"Постараюсь говорить только «да» на разумные просьбы.",
+description:"Буду говорить только «да» на все.",
 price:1800,
 rarity:"mythic"
 },
@@ -710,7 +710,7 @@ rarity:"mythic"
 emoji:"🎟️",
 title:"Сертификат на желание",
 description:"Используй его тогда, когда захочешь.",
-price:2000,
+price:1500,
 rarity:"mythic"
 }
 
