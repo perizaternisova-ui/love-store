@@ -82,6 +82,17 @@ document.getElementById("checkoutBtn").addEventListener("click", function () {
     balance -= total;
 
     localStorage.setItem("loveBalance", balance);
+    
+    fetch("https://script.google.com/macros/s/AKfycbwTo-d1bIdGaqITS2a13_MgVKpqoWCd_K0baBnUhIjwhAaMy6EN62-t3BpPwoTkkWitxg/exec", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        title: cart.map(item => item.title).join(", "),
+        price: total
+    })
+}).catch(error => console.log(error));
 
     localStorage.removeItem("cart");
 
