@@ -83,8 +83,9 @@ document.getElementById("checkoutBtn").addEventListener("click", function () {
 
     localStorage.setItem("loveBalance", balance);
     
-    fetch("https://script.google.com/macros/s/AKfycbwTo-d1bIdGaqITS2a13_MgVKpqoWCd_K0baBnUhIjwhAaMy6EN62-t3BpPwoTkkWitxg/exec", {
+fetch("https://script.google.com/macros/s/AKfycbwTo-d1bIdGaqITS2a13_MgVKpqoWCd_K0baBnUhIjwhAaMy6EN62-t3BpPwoTkkWitxg/exec", {
     method: "POST",
+    mode: "no-cors",
     headers: {
         "Content-Type": "application/json"
     },
@@ -92,6 +93,8 @@ document.getElementById("checkoutBtn").addEventListener("click", function () {
         title: cart.map(item => item.title).join(", "),
         price: total
     })
+});
+
 }).catch(error => console.log(error));
 
     localStorage.removeItem("cart");
