@@ -665,7 +665,7 @@ rarity:"legendary"
 {
 emoji:"💎",
 title:"Одно желание",
-description:"Исполню одно разумное желание.",
+description:"Исполню одно желание.",
 price:1000,
 rarity:"mythic"
 },
