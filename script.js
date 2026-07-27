@@ -801,13 +801,13 @@ cancelBtn.addEventListener("click",()=>{
 
 const accessBtn = document.getElementById("accessBtn");
 
+console.log(accessBtn);
+
 if (accessBtn) {
-
-    accessBtn.addEventListener("click", () => {
-
-        alert("Кнопка работает ❤️");
-
-    });
-
+    accessBtn.onclick = function () {
+        alert("Работает ❤️");
+    };
 }
+
+
 
