@@ -791,37 +791,6 @@ createCards(shop.challenge,"challenge");
 createCards(shop.exclusive,"exclusive");
 createCards(shop.wish,"wish");
 
-
-const modal = document.getElementById("purchaseModal");
-
-const modalEmoji = document.getElementById("modalEmoji");
-
-const modalTitle = document.getElementById("modalTitle");
-
-const modalDescription = document.getElementById("modalDescription");
-
-const modalPrice = document.getElementById("modalPrice");
-
-const cancelBtn = document.getElementById("cancelBtn");
-
-const confirmBtn = document.getElementById("confirmBtn");
-
-let currentItem = null;
-
-function openPurchaseModal(item){
-
-    currentItem = item;
-
-    modalEmoji.textContent = item.emoji;
-
-    modalTitle.textContent = item.title;
-
-    modalDescription.textContent = item.description;
-
-    modalPrice.textContent = `❤️ ${item.price}`;
-
-    modal.classList.add("show");
-
 }
 
 cancelBtn.addEventListener("click",()=>{
