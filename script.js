@@ -830,18 +830,15 @@ cancelBtn.addEventListener("click",()=>{
 
 });
 
-
 const accessBtn = document.getElementById("accessBtn");
-const welcomeCard = document.getElementById("welcomeCard");
-const homeContent = document.getElementById("homeContent");
-const bottomNav = document.getElementById("bottomNav");
 
-accessBtn.addEventListener("click", () => {
+if (accessBtn) {
 
-    welcomeCard.style.display = "none";
+    accessBtn.addEventListener("click", () => {
 
-    homeContent.style.display = "block";
+        alert("Кнопка работает ❤️");
 
-    bottomNav.style.display = "flex";
+    });
 
-});
+}
+
