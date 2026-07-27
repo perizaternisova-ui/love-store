@@ -81,8 +81,8 @@ document.getElementById("checkoutBtn").addEventListener("click", function () {
 
     balance -= total;
 
-    localStorage.setItem("loveBalance", balance);
-    
+localStorage.setItem("loveBalance", balance);
+
 fetch("https://script.google.com/macros/s/AKfycbwTo-d1bIdGaqITS2a13_MgVKpqoWCd_K0baBnUhIjwhAaMy6EN62-t3BpPwoTkkWitxg/exec", {
     method: "POST",
     mode: "no-cors",
@@ -93,21 +93,18 @@ fetch("https://script.google.com/macros/s/AKfycbwTo-d1bIdGaqITS2a13_MgVKpqoWCd_K
         title: cart.map(item => item.title).join(", "),
         price: total
     })
-});
-
 }).catch(error => console.log(error));
 
-    localStorage.removeItem("cart");
+localStorage.removeItem("cart");
 
-    loadCart();
+loadCart();
 
-    document.getElementById("orderMessage").innerHTML = `
-        <div class="success-box">
-            <h2>🎉 Заказ оформлен!</h2>
-            <p>❤️ Списано: <b>${total}</b></p>
-            <p>❤️ Осталось: <b>${balance}</b></p>
-            <p>Спасибо за заказ 💖</p>
-        </div>
-    `;
+document.getElementById("orderMessage").innerHTML = `
+    <div class="success-box">
+        <h2>🎉 Заказ оформлен!</h2>
+        <p>❤️ Списано: <b>${total}</b></p>
+        <p>❤️ Осталось: <b>${balance}</b></p>
+        <p>Спасибо за заказ 💖</p>
+    </div>
+`;
 });
-
