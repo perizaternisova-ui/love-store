@@ -1,7 +1,9 @@
 const heartsContainer = document.getElementById("hearts");
 
 // Создаём баланс при первом запуске
-localStorage.setItem("loveBalance", "10000");
+if (localStorage.getItem("loveBalance") === null) {
+    localStorage.setItem("loveBalance", "10000");
+}
 
 const balanceElement = document.getElementById("balance");
 
