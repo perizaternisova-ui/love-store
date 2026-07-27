@@ -209,7 +209,7 @@ rarity:"epic"
 emoji:"🛁",
 title:"Романтическая ванна",
 description:"Пена, свечи и атмосфера.",
-price:350,
+price:300,
 rarity:"legendary"
 },
 
