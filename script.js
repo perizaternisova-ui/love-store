@@ -1,3 +1,4 @@
+alert("script запустился");
 const heartsContainer = document.getElementById("hearts");
 
 // Создаём баланс при первом запуске
