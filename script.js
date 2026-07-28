@@ -802,12 +802,16 @@ createCards(shop.wish,"wish");
 
 const accessBtn = document.getElementById("accessBtn");
 
-console.log(accessBtn);
-
 if (accessBtn) {
-    accessBtn.onclick = function () {
-        alert("Работает ❤️");
-    };
-}
+    accessBtn.addEventListener("click", function () {
 
-console.log("Конец файла");
+        const welcomeCard = document.getElementById("welcomeCard");
+        const homeContent = document.getElementById("homeContent");
+        const bottomNav = document.getElementById("bottomNav");
+
+        if (welcomeCard) welcomeCard.style.display = "none";
+        if (homeContent) homeContent.style.display = "block";
+        if (bottomNav) bottomNav.style.display = "flex";
+
+    });
+}
