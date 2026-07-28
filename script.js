@@ -1,4 +1,11 @@
 alert("script запустился");
+
+console.log("1");
+
+window.onerror = function(message, source, line) {
+    alert("Ошибка:\n" + message + "\nСтрока: " + line);
+};
+
 const heartsContainer = document.getElementById("hearts");
 
 // Создаём баланс при первом запуске
@@ -803,5 +810,9 @@ if (accessBtn) {
     };
 }
 
+console.log("Конец файла");
+
+const accessBtn = document.getElementById("accessBtn");
+alert(accessBtn ? "Кнопка найдена" : "Кнопка НЕ найдена");
 
 
