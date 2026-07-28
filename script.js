@@ -811,8 +811,3 @@ if (accessBtn) {
 }
 
 console.log("Конец файла");
-
-const accessBtn = document.getElementById("accessBtn");
-alert(accessBtn ? "Кнопка найдена" : "Кнопка НЕ найдена");
-
-
