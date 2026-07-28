@@ -878,6 +878,8 @@ const rewardTitle = document.getElementById("rewardTitle");
 const rewardText = document.getElementById("rewardText");
 const claimReward = document.getElementById("claimReward");
 
+alert(claimReward);
+
 fortuneBtn.addEventListener("click",spinWheel);
 
 function spinWheel(){
