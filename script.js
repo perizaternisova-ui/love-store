@@ -877,6 +877,11 @@ type:"bonus"
 const fortuneBtn=document.getElementById("fortuneBtn");
 const wheel=document.querySelector(".fortune-wheel");
 
+const fortuneModal = document.getElementById("fortuneModal");
+const rewardTitle = document.getElementById("rewardTitle");
+const rewardText = document.getElementById("rewardText");
+const claimReward = document.getElementById("claimReward");
+
 fortuneBtn.addEventListener("click",spinWheel);
 
 function spinWheel(){
@@ -911,13 +916,6 @@ fortuneModal.style.display="flex";
 fortuneBtn.disabled=false;
 
 }
-
-claimReward.onclick=function(){
-
-fortuneModal.style.display="none";
-
-};
-
 
 claimReward.addEventListener("click", function () {
 
