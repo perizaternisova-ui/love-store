@@ -868,3 +868,47 @@ type:"bonus"
 }
 
 ];
+
+const fortuneBtn=document.getElementById("fortuneBtn");
+const wheel=document.querySelector(".fortune-wheel");
+
+fortuneBtn.addEventListener("click",spinWheel);
+
+function spinWheel(){
+
+fortuneBtn.disabled=true;
+
+wheel.classList.add("spinning");
+
+if(navigator.vibrate){
+
+navigator.vibrate([120,80,120]);
+
+}
+
+setTimeout(showReward,3000);
+
+}
+function showReward(){
+
+wheel.classList.remove("spinning");
+
+const reward=fortuneRewards[
+Math.floor(Math.random()*fortuneRewards.length)
+];
+
+rewardTitle.textContent=reward.title;
+
+rewardText.textContent=reward.text;
+
+fortuneModal.style.display="flex";
+
+fortuneBtn.disabled=false;
+
+}
+
+claimReward.onclick=function(){
+
+fortuneModal.style.display="none";
+
+};
