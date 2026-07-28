@@ -814,10 +814,6 @@ if (accessBtn) {
     });
 }
 
-const fortuneModal = document.getElementById("fortuneModal");
-const rewardTitle = document.getElementById("rewardTitle");
-const rewardText = document.getElementById("rewardText");
-const claimReward = document.getElementById("claimReward");
 
 const fortuneRewards = [
 
