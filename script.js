@@ -792,13 +792,6 @@ createCards(shop.challenge,"challenge");
 createCards(shop.exclusive,"exclusive");
 createCards(shop.wish,"wish");
 
-}
-
-cancelBtn.addEventListener("click",()=>{
-
-    modal.classList.remove("show");
-
-});
 
 const accessBtn = document.getElementById("accessBtn");
 
