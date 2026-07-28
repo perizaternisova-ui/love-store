@@ -1,5 +1,3 @@
-alert("script запустился");
-
 console.log("1");
 
 window.onerror = function(message, source, line) {
