@@ -677,3 +677,25 @@ opacity:1;
 }
 
 }
+
+.spinning{
+
+animation:spin 3s cubic-bezier(.15,.9,.2,1);
+
+}
+
+@keyframes spin{
+
+0%{
+
+transform:rotate(0deg);
+
+}
+
+100%{
+
+transform:rotate(1800deg);
+
+}
+
+}
