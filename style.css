@@ -283,56 +283,70 @@ section h2{
 
 .card{
 
-    width:min(420px,92%);
+    width:min(430px,92%);
 
-    margin:60px auto;
+    margin:45px auto;
 
-    background:rgba(255,255,255,.65);
+    padding:45px 30px;
 
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
+    background:rgba(255,255,255,.45);
 
-    border-radius:32px;
+    backdrop-filter:blur(28px);
+    -webkit-backdrop-filter:blur(28px);
 
-    padding:35px 25px;
+    border:1px solid rgba(255,255,255,.6);
+
+    border-radius:36px;
 
     text-align:center;
 
-    box-shadow:0 15px 40px rgba(255,105,180,.18);
+    box-shadow:
+        0 20px 60px rgba(255,105,180,.18),
+        inset 0 1px 0 rgba(255,255,255,.7);
 
+    animation:cardAppear .8s ease;
 }
 
 .heart{
 
-    font-size:90px;
+    font-size:110px;
 
-    animation:pulse 2s infinite;
+    margin-bottom:25px;
 
-    margin-bottom:20px;
+    filter:drop-shadow(0 0 20px rgba(255,70,140,.35));
+
+    animation:
+        pulse 2.5s infinite,
+        floatHeart 5s ease-in-out infinite;
 
 }
 
 .card h1{
 
-    font-size:42px;
+    font-size:46px;
 
     color:#ff4f87;
 
-    margin-bottom:15px;
+    margin-bottom:18px;
+
+    font-weight:800;
+
+    letter-spacing:.5px;
 
 }
 
 .card p{
 
-    font-size:22px;
-
-    line-height:1.5;
+    font-size:20px;
 
     color:#666;
 
-    margin-bottom:30px;
+    line-height:1.7;
+
+    margin-bottom:38px;
 
 }
+
 
 .access-btn{
 
@@ -491,3 +505,38 @@ section h2{
     cursor:pointer;
 
 }
+
+@keyframes cardAppear{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px) scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+@keyframes floatHeart{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
