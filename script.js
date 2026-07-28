@@ -1,5 +1,7 @@
 console.log("1");
 
+console.log("Кнопка Войти подключилась");
+
 window.onerror = function(message, source, line) {
     alert("Ошибка:\n" + message + "\nСтрока: " + line);
 };
