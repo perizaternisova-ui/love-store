@@ -559,3 +559,25 @@ section h2{
 
 }
 
+.fortune-wheel{
+
+    font-size:72px;
+
+    margin:15px 0;
+
+    animation:wheelFloat 3s ease-in-out infinite;
+
+}
+
+.fortune-text{
+
+    text-align:center;
+
+    color:#777;
+
+    font-size:18px;
+
+    margin-bottom:22px;
+
+}
+
