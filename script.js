@@ -879,8 +879,9 @@ const rewardText = document.getElementById("rewardText");
 const claimReward = document.getElementById("claimReward");
 
 
-fortuneBtn.addEventListener("click",spinWheel);
-
+if (fortuneBtn) {
+    fortuneBtn.addEventListener("click", spinWheel);
+}
 function spinWheel(){
 
 fortuneBtn.disabled=true;
@@ -914,8 +915,12 @@ fortuneBtn.disabled=false;
 
 }
 
-claimReward.addEventListener("click", function () {
+if (claimReward) {
 
-    fortuneModal.style.display = "none";
+    claimReward.addEventListener("click", function () {
 
-});
+        fortuneModal.style.display = "none";
+
+    });
+
+}
