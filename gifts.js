@@ -1,1 +1,1 @@
-alert("gifts.js подключен");
+hello
