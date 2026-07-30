@@ -924,6 +924,12 @@ rewardTitle.textContent=reward.title;
 
 rewardText.textContent=reward.text;
 
+if (reward.type === "hearts") {
+
+    addBalance(reward.value);
+
+}
+
 fortuneModal.style.display="flex";
 
 fortuneBtn.disabled=false;
