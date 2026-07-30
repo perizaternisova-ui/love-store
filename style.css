@@ -699,3 +699,29 @@ transform:rotate(1800deg);
 }
 
 }
+
+.gifts-card {
+    background: white;
+    border-radius: 30px;
+    padding: 25px;
+    margin-top: 25px;
+    box-shadow: 0 10px 30px rgba(255, 92, 154, 0.15);
+}
+
+.gifts-card h3 {
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+#giftsList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.empty-gifts {
+    text-align: center;
+    color: #777;
+    font-size: 20px;
+    line-height: 1.6;
+}
