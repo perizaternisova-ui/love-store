@@ -854,33 +854,31 @@ value:500
 },
 
 {
-title:"🎁 Бесплатный кофе",
+emoji:"☕",
+title:"Бесплатный кофе",
 text:"Получи кофе совершенно бесплатно ☕",
 type:"gift"
 },
 
 {
-title:"🍫 Любимая шоколадка",
+emoji:"🍫",
+title:"Любимая шоколадка",
 text:"Этот подарок теперь твой ❤️",
 type:"gift"
 },
 
 {
-title:"🍕 Романтический ужин",
+emoji:"🍕",
+title:"Романтический ужин",
 text:"Бесплатно сегодня 💖",
 type:"gift"
 },
 
 {
-title:"🎬 Совместный фильм",
+emoji:"🎬",
+title:"Совместный фильм",
 text:"Кино сегодня за счет Love Store",
 type:"gift"
-},
-
-{
-title:"💝 Сюрприз",
-text:"Открой магазин и выбери подарок.",
-type:"bonus"
 }
 
 ];
@@ -927,6 +925,12 @@ rewardText.textContent=reward.text;
 if (reward.type === "hearts") {
 
     addBalance(reward.value);
+
+}
+
+if (reward.type === "gift") {
+
+    addGift(reward);
 
 }
 
