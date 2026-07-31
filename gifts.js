@@ -118,3 +118,32 @@ function addGift(gift) {
 function useGift(id) {
 
 }
+
+function useGift(index) {
+
+    let gifts = JSON.parse(localStorage.getItem("loveGifts")) || [];
+
+    const gift = gifts[index];
+
+    if (!gift) return;
+
+    const confirmUse = confirm(
+        `Использовать подарок "${gift.title}"?`
+    );
+
+    if (!confirmUse) return;
+
+    // Удаляем подарок из списка
+    gifts.splice(index, 1);
+
+    // Сохраняем
+    localStorage.setItem("loveGifts", JSON.stringify(gifts));
+
+    // Обновляем экран
+    loadGifts();
+
+    alert(
+        `🎁 Подарок "${gift.title}" успешно использован!`
+    );
+
+}
