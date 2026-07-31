@@ -950,5 +950,6 @@ if (claimReward) {
 
 }
 
-// Загружаем выигранные подарки
-loadGifts();
+if (typeof loadGifts === "function") {
+    loadGifts();
+}
