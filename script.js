@@ -896,6 +896,20 @@ if (fortuneBtn) {
     fortuneBtn.addEventListener("click", spinWheel);
 }
 function spinWheel(){
+    
+    // Проверяем дату последнего вращения
+
+const today = new Date().toDateString();
+
+const lastSpin = localStorage.getItem("lastFortuneSpin");
+
+if (lastSpin === today) {
+
+    alert("❤️ Сегодня ты уже крутил колесо!\n\nПопробуй снова завтра.");
+
+    return;
+
+}
 
 fortuneBtn.disabled=true;
 
