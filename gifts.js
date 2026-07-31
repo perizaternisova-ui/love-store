@@ -43,9 +43,43 @@ function loadGifts() {
 
     // Пока просто проверяем,
     // что подарки существуют
-    giftsList.innerHTML = `
-        <p>Подарков: ${gifts.length}</p>
-    `;
+    giftsList.innerHTML = "";
+
+gifts.forEach((gift, index) => {
+
+    giftsList.innerHTML += `
+
+<div class="gift-item">
+
+    <div class="gift-left">
+
+        <div class="gift-emoji">
+            ${gift.emoji}
+        </div>
+
+        <div>
+
+            <h4>${gift.title}</h4>
+
+            <p>Получено в Колесе удачи 🎲</p>
+
+        </div>
+
+    </div>
+
+    <button
+        class="useGiftBtn"
+        onclick="useGift(${index})">
+
+        Использовать
+
+    </button>
+
+</div>
+
+`;
+
+});
 
 }
 
