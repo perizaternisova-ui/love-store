@@ -59,11 +59,29 @@ gifts.forEach((gift, index) => {
 
         <div>
 
-            <h4>${gift.title}</h4>
+            <div class="gift-left">
 
-            <p>Получено в Колесе удачи 🎲</p>
+    <div class="gift-emoji">
 
-        </div>
+        ${gift.emoji}
+
+    </div>
+
+    <div class="gift-info">
+
+        <h4>${gift.title}</h4>
+
+        <p>Выиграно в Колесе удачи 🎲</p>
+
+    </div>
+
+</div>
+
+<div class="gift-right">
+
+    <div class="gift-count">
+
+        ×${gift.count}
 
     </div>
 
@@ -74,6 +92,8 @@ gifts.forEach((gift, index) => {
         Использовать
 
     </button>
+
+</div>
 
 </div>
 
