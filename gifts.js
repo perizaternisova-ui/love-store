@@ -52,6 +52,32 @@ function loadGifts() {
 // Добавить подарок
 function addGift(gift) {
 
+    const gifts = getGifts();
+
+    // Ищем, есть ли уже такой подарок
+    const existingGift = gifts.find(item => item.title === gift.title);
+
+    if (existingGift) {
+
+        existingGift.count++;
+
+    } else {
+
+        gifts.push({
+            id: Date.now(),
+            emoji: gift.emoji,
+            title: gift.title,
+            text: gift.text,
+            count: 1
+        });
+
+    }
+
+    saveGifts(gifts);
+
+    // Сразу обновляем карточку
+    loadGifts();
+
 }
 
 // Использовать подарок
