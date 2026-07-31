@@ -148,6 +148,26 @@ function useGift(index) {
     );
 
     if (!confirmUse) return;
+    
+    fetch("https://script.google.com/macros/s/AKfycbwBARC9crjIfEqQgxCOyGkfryToz01nCV3kTggPQOiartrfA8Zzucxg9ZpZLOVbexo3/exec", {
+
+    method: "POST",
+
+    mode: "no-cors",
+
+    headers: {
+        "Content-Type": "application/json"
+    },
+
+    body: JSON.stringify({
+
+        type: "gift",
+
+        title: gift.title
+
+    })
+
+});
 
    // Уменьшаем количество
 gifts[index].count--;
