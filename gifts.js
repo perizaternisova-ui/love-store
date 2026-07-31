@@ -132,10 +132,6 @@ function addGift(gift) {
     // Сразу обновляем карточку
     loadGifts();
 
-}
-
-// Использовать подарок
-function useGift(id) {
 
 }
 
