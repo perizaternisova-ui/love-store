@@ -725,3 +725,69 @@ transform:rotate(1800deg);
     font-size: 20px;
     line-height: 1.6;
 }
+
+/* ===========================
+      МОИ ПОДАРКИ
+=========================== */
+
+.gift-item{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+background:white;
+
+border-radius:22px;
+
+padding:16px;
+
+margin-top:15px;
+
+box-shadow:0 10px 25px rgba(255,90,150,.15);
+
+transition:.25s;
+
+}
+
+.gift-item:hover{
+
+transform:translateY(-2px);
+
+}
+
+.gift-left{
+
+display:flex;
+align-items:center;
+gap:14px;
+
+}
+
+.gift-emoji{
+
+font-size:40px;
+
+}
+
+.gift-info h4{
+
+margin:0;
+
+font-size:18px;
+
+font-weight:700;
+
+color:#333;
+
+}
+
+.gift-info p{
+
+margin-top:6px;
+
+font-size:14px;
+
+color:#888;
+
+}
