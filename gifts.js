@@ -133,8 +133,15 @@ function useGift(index) {
 
     if (!confirmUse) return;
 
-    // Удаляем подарок из списка
+   // Уменьшаем количество
+gifts[index].count--;
+
+// Если подарков больше нет — удаляем карточку
+if (gifts[index].count <= 0) {
+
     gifts.splice(index, 1);
+
+}
 
     // Сохраняем
     localStorage.setItem("loveGifts", JSON.stringify(gifts));
