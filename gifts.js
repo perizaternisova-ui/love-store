@@ -19,7 +19,33 @@ function saveGifts(gifts) {
 }
 
 // Загрузить раздел "Мои подарки"
+// Загрузить раздел "Мои подарки"
 function loadGifts() {
+
+    const giftsList = document.getElementById("giftsList");
+
+    if (!giftsList) return;
+
+    const gifts = getGifts();
+
+    // Если подарков нет
+    if (gifts.length === 0) {
+
+        giftsList.innerHTML = `
+            <p class="empty-gifts">
+                Пока здесь пусто ❤️<br>
+                Выиграй подарок в колесе фортуны.
+            </p>
+        `;
+
+        return;
+    }
+
+    // Пока просто проверяем,
+    // что подарки существуют
+    giftsList.innerHTML = `
+        <p>Подарков: ${gifts.length}</p>
+    `;
 
 }
 
