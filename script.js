@@ -950,6 +950,8 @@ if (reward.type === "gift") {
 
 fortuneModal.style.display="flex";
 
+localStorage.setItem("lastFortuneSpin", new Date().toDateString());
+
 fortuneBtn.disabled=false;
 
 }
