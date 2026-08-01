@@ -4,6 +4,20 @@ const addPhotoBtn = document.getElementById("addPhotoBtn");
 
 const photoInput = document.getElementById("photoInput");
 
+const photoModal = document.getElementById("photoModal");
+
+const fullPhoto = document.getElementById("fullPhoto");
+
+const photoCaption = document.getElementById("photoCaption");
+
+const photoDate = document.getElementById("photoDate");
+
+const saveCaption = document.getElementById("saveCaption");
+
+const closePhoto = document.getElementById("closePhoto");
+
+let currentPhoto = null;
+
 let photos = JSON.parse(localStorage.getItem("lovePhotos")) || [];
 
 function savePhotos(){
@@ -36,6 +50,20 @@ function renderGallery(){
             </div>
 
         `;
+
+card.onclick = function(){
+
+    currentPhoto = index;
+
+    fullPhoto.src = photo.image;
+
+    photoCaption.value = photo.caption || "";
+
+    photoDate.value = photo.date || "";
+
+    photoModal.style.display = "flex";
+
+}
 
         gallery.appendChild(card);
 
