@@ -12,3 +12,19 @@ firebase.initializeApp(firebaseConfig);
 window.db = firebase.firestore();
 
 alert("Firebase загружен");
+
+window.db.collection("loveStore")
+    .doc("main")
+    .get()
+    .then((doc) => {
+
+        alert("exists = " + doc.exists);
+
+        alert("id = " + doc.id);
+
+        alert("data = " + JSON.stringify(doc.data()));
+
+    })
+    .catch((e) => {
+        alert(e.message);
+    });
