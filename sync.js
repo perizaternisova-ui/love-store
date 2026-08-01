@@ -1,41 +1,71 @@
-alert("db = " + !!window.db);
-window.db.collection("loveStore")
-.doc("main")
-.get()
-.then(doc => {
-    alert("exists = " + doc.exists);
-    if(doc.exists){
-        alert(JSON.stringify(doc.data()));
-    }
-})
-.catch(e=>{
-    alert(e.message);
-});
-
+// ===== Загрузка данных из Firebase =====
 async function syncFromFirebase() {
 
-    const doc = await db.collection("loveStore")
-        .doc("main")
-        .get();
+    try {
 
-    if (!doc.exists) return;
+        const doc = await db.collection("loveStore")
+            .doc("main")
+            .get();
 
-    const data = doc.data();
+        if (!doc.exists) return;
 
-    if (data.loveBalance !== undefined) {
-        localStorage.setItem("loveBalance", data.loveBalance);
+        const data = doc.data();
+
+        if (data.loveBalance !== undefined) {
+            localStorage.setItem("loveBalance", data.loveBalance);
+        }
+
+    } catch (e) {
+        console.error("Ошибка загрузки:", e);
     }
 
 }
 
+// ===== Сохранение данных в Firebase =====
 async function syncToFirebase() {
 
-    await db.collection("loveStore")
-        .doc("main")
-        .set({
+    try {
 
-            loveBalance: Number(localStorage.getItem("loveBalance")) || 0
+        await db.collection("loveStore")
+            .doc("main")
+            .set({
+                loveBalance: Number(localStorage.getItem("loveBalance")) || 0
+            }, { merge: true });
 
-        }, { merge: true });
+    } catch (e) {
+        console.error("Ошибка сохранения:", e);
+    }
+
+}
+
+// ===== Получить баланс =====
+function getLoveBalance() {
+    return Number(localStorage.getItem("loveBalance")) || 0;
+}
+
+// ===== Установить баланс =====
+async function setLoveBalance(value) {
+
+    localStorage.setItem("loveBalance", value);
+
+    await syncToFirebase();
+
+}
+
+// ===== Добавить баланс =====
+async function addLoveBalance(value) {
+
+    const balance = getLoveBalance() + value;
+
+    await setLoveBalance(balance);
+
+}
+
+// ===== Снять баланс =====
+async function removeLoveBalance(value) {
+
+    const balance = Math.max(0, getLoveBalance() - value);
+
+    await setLoveBalance(balance);
 
 }
