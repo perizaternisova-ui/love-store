@@ -816,18 +816,14 @@ if (accessBtn) {
     });
 }
 
-function addBalance(amount) {
+async function addBalance(amount) {
 
-    let balance = Number(localStorage.getItem("loveBalance")) || 0;
-
-    balance += amount;
-
-    localStorage.setItem("loveBalance", balance);
+    await addLoveBalance(amount);
 
     const balanceElement = document.getElementById("balance");
 
     if (balanceElement) {
-        balanceElement.textContent = balance;
+        balanceElement.textContent = getLoveBalance();
     }
 
 }
