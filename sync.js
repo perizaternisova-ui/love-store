@@ -1,3 +1,17 @@
+alert("db = " + !!window.db);
+window.db.collection("loveStore")
+.doc("main")
+.get()
+.then(doc => {
+    alert("exists = " + doc.exists);
+    if(doc.exists){
+        alert(JSON.stringify(doc.data()));
+    }
+})
+.catch(e=>{
+    alert(e.message);
+});
+
 async function syncFromFirebase() {
 
     const doc = await db.collection("loveStore")
