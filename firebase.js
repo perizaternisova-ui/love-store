@@ -9,7 +9,13 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-window.db.collection("loveStore").get()
+// ЭТУ СТРОКУ НУЖНО ДОБАВИТЬ
+window.db = firebase.firestore();
+
+alert(firebase.app().options.projectId);
+
+window.db.collection("loveStore")
+.get()
 .then((snapshot) => {
 
     alert("Документов: " + snapshot.size);
