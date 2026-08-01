@@ -10,55 +10,39 @@
 
 <style>
 
-body{
-    background:#ffeaf5;
-    margin:0;
-    padding:20px;
-    text-align:center;
-    font-family:sans-serif;
-}
-
-h1{
-    color:#ff4f9a;
-}
-
-img{
-
-    width:100%;
-
-    max-width:700px;
-
-    border-radius:20px;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.15);
-
-}
-
-.back{
-
-display:inline-block;
-
-margin-bottom:20px;
-
-padding:12px 25px;
-
-background:#ff4f9a;
-
-color:white;
-
-text-decoration:none;
-
-border-radius:15px;
-
-font-weight:bold;
-
-}
-
-</style>
-
-</head>
-
 <body>
+
+<a href="love.html" class="back">
+← Назад
+</a>
+
+<h1>
+📚 Наш комикс
+</h1>
+
+<div class="reader">
+
+<img id="comicImage">
+
+<div class="controls">
+
+<button onclick="prevPage()">
+⬅️
+</button>
+
+<span id="pageCounter"></span>
+
+<button onclick="nextPage()">
+➡️
+</button>
+
+</div>
+
+</div>
+
+<script src="comic.js"></script>
+
+</body>
 
 <a href="love.html" class="back">
 ← Назад
