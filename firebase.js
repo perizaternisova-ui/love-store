@@ -15,14 +15,15 @@ db.collection("loveStore")
   .doc("main")
   .get()
   .then((doc) => {
+    alert(
+      "Project: " + firebase.app().options.projectId +
+      "\nДокумент существует: " + doc.exists
+    );
 
     if (doc.exists) {
-      alert("Firebase подключен! Баланс: " + doc.data().loveBalance);
-    } else {
-      alert("Документ не найден");
+      alert(JSON.stringify(doc.data()));
     }
-
   })
   .catch((error) => {
-    alert("Ошибка: " + error.message);
+    alert(error.message);
   });
