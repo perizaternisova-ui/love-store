@@ -11,18 +11,13 @@ firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
 
-db.collection("loveStore")
-  .doc("main")
+alert("Версия Firebase №2");
+
+db.collection("AAAAA")
+  .doc("BBBBB")
   .get()
   .then((doc) => {
-    alert(
-      "Project: " + firebase.app().options.projectId +
-      "\nДокумент существует: " + doc.exists
-    );
-
-    if (doc.exists) {
-      alert(JSON.stringify(doc.data()));
-    }
+    alert("exists = " + doc.exists);
   })
   .catch((error) => {
     alert(error.message);
