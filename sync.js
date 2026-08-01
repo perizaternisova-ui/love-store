@@ -69,3 +69,19 @@ async function removeLoveBalance(value) {
     await setLoveBalance(balance);
 
 }
+
+// ======================================
+// Автоматическая загрузка данных
+// ======================================
+
+window.addEventListener("load", async () => {
+
+    await syncFromFirebase();
+
+    const balance = document.getElementById("balance");
+
+    if (balance) {
+        balance.textContent = getLoveBalance();
+    }
+
+});
