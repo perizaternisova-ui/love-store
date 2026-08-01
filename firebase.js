@@ -9,16 +9,6 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-const db = firebase.firestore();
+window.db = firebase.firestore();
 
-alert("Версия Firebase №2");
-
-db.collection("loveStore")
-  .doc("main")
-  .get()
-  .then((doc) => {
-    alert("exists = " + doc.exists);
-  })
-  .catch((error) => {
-    alert(error.message);
-  });
+alert("Firebase загружен");
