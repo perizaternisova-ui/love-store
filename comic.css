@@ -1,0 +1,45 @@
+.reader{
+
+    max-width:750px;
+    margin:auto;
+
+}
+
+.controls{
+
+    margin-top:25px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+
+}
+
+.controls button{
+
+    background:#ff4f9a;
+    color:white;
+    border:none;
+    padding:14px 25px;
+    font-size:22px;
+    border-radius:18px;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(255,79,154,.3);
+    transition:.2s;
+
+}
+
+.controls button:active{
+
+    transform:scale(.95);
+
+}
+
+#pageCounter{
+
+    font-size:22px;
+    font-weight:bold;
+    color:#ff4f9a;
+    min-width:90px;
+
+}
