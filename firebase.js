@@ -9,22 +9,18 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-// ЭТУ СТРОКУ НУЖНО ДОБАВИТЬ
 window.db = firebase.firestore();
 
-alert(firebase.app().options.projectId);
-
 window.db.collection("loveStore")
+.doc("main")
 .get()
-.then((snapshot) => {
+.then((doc) => {
+    alert("exists = " + doc.exists);
 
-    alert("Документов: " + snapshot.size);
-
-    snapshot.forEach(doc => {
-        alert(doc.id + " -> " + JSON.stringify(doc.data()));
-    });
-
+    if (doc.exists) {
+        alert(JSON.stringify(doc.data()));
+    }
 })
-.catch(e => {
+.catch((e) => {
     alert(e.message);
 });
