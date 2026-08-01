@@ -9,22 +9,16 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-window.db = firebase.firestore();
+window.db.collection("loveStore").get()
+.then((snapshot) => {
 
-alert("Firebase загружен");
+    alert("Документов: " + snapshot.size);
 
-window.db.collection("loveStore")
-    .doc("main")
-    .get()
-    .then((doc) => {
-
-        alert("exists = " + doc.exists);
-
-        alert("id = " + doc.id);
-
-        alert("data = " + JSON.stringify(doc.data()));
-
-    })
-    .catch((e) => {
-        alert(e.message);
+    snapshot.forEach(doc => {
+        alert(doc.id + " -> " + JSON.stringify(doc.data()));
     });
+
+})
+.catch(e => {
+    alert(e.message);
+});
