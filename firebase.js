@@ -1,26 +1,12 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyC8R55MCRgCjwi8aH-vLiP3IOCJS_Cnkjw",
-  authDomain: "love-store-app.firebaseapp.com",
+  apiKey: "...",
+  authDomain: "...",
   projectId: "love-store-app",
-  storageBucket: "love-store-app.firebasestorage.app",
-  messagingSenderId: "878435294971",
-  appId: "1:878435294971:web:fb707658a1ee955f0a9a5e"
+  storageBucket: "...",
+  messagingSenderId: "...",
+  appId: "..."
 };
 
 firebase.initializeApp(firebaseConfig);
 
 window.db = firebase.firestore();
-
-window.db.collection("loveStore")
-.doc("main")
-.get()
-.then((doc) => {
-    alert("exists = " + doc.exists);
-
-    if (doc.exists) {
-        alert(JSON.stringify(doc.data()));
-    }
-})
-.catch((e) => {
-    alert(e.message);
-});
