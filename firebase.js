@@ -13,8 +13,8 @@ const db = firebase.firestore();
 
 alert("Версия Firebase №2");
 
-db.collection("AAAAA")
-  .doc("BBBBB")
+db.collection("loveStore")
+  .doc("main")
   .get()
   .then((doc) => {
     alert("exists = " + doc.exists);
