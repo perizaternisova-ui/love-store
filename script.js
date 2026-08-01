@@ -7,15 +7,17 @@ window.onerror = function(message, source, line) {
 const heartsContainer = document.getElementById("hearts");
 
 // Создаём баланс при первом запуске
-if (localStorage.getItem("loveBalance") === null) {
-    localStorage.setItem("loveBalance", "10000");
-}
-
 const balanceElement = document.getElementById("balance");
 
-if (balanceElement) {
-    balanceElement.textContent = localStorage.getItem("loveBalance");
-}
+(async () => {
+
+    await syncFromFirebase();
+
+    if (balanceElement) {
+        balanceElement.textContent = getLoveBalance();
+    }
+
+})();
 
 
 let cart = [];
