@@ -106,3 +106,25 @@ photoInput.onchange = function(e){
 }
 
 renderGallery();
+
+saveCaption.onclick = function(){
+
+    if(currentPhoto === null) return;
+
+    photos[currentPhoto].caption = photoCaption.value;
+
+    photos[currentPhoto].date = photoDate.value;
+
+    savePhotos();
+
+    renderGallery();
+
+    photoModal.style.display = "none";
+
+}
+
+closePhoto.onclick = function(){
+
+    photoModal.style.display = "none";
+
+}
