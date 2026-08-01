@@ -135,19 +135,5 @@
 <script src="sync.js"></script>
 <script src="script.js?v=999"></script>
 
-<script>
-window.addEventListener("load", async () => {
-
-    await syncFromFirebase();
-
-    const balance = document.getElementById("balance");
-
-    if (balance) {
-        balance.textContent = getLoveBalance();
-    }
-
-});
-</script>
-
 </body>
 </html>
