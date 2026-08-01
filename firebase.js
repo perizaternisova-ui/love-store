@@ -12,17 +12,17 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 db.collection("loveStore")
-.doc("main")
-.get()
-.then((doc) => {
+  .doc("main")
+  .get()
+  .then((doc) => {
 
-    console.log("Firebase работает!");
+    if (doc.exists) {
+      alert("Firebase подключен! Баланс: " + doc.data().loveBalance);
+    } else {
+      alert("Документ не найден");
+    }
 
-    console.log(doc.data());
-
-})
-.catch((error) => {
-
-    console.error(error);
-
-});
+  })
+  .catch((error) => {
+    alert("Ошибка: " + error.message);
+  });
