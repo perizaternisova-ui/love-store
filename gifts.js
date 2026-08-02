@@ -3,11 +3,6 @@
 // Мои подарки
 // ==============================
 
-// Ключ localStorage
-const GIFTS_STORAGE_KEY = "loveGifts";
-
-
-// Загрузить раздел "Мои подарки"
 function loadGifts() {
 
     const giftsList = document.getElementById("giftsList");
@@ -16,7 +11,6 @@ function loadGifts() {
 
     const gifts = getGifts();
 
-    // Если подарков нет
     if (gifts.length === 0) {
 
         giftsList.innerHTML = `
@@ -27,15 +21,14 @@ function loadGifts() {
         `;
 
         return;
+
     }
 
-    // Пока просто проверяем,
-    // что подарки существуют
     giftsList.innerHTML = "";
 
-gifts.forEach((gift, index) => {
+    gifts.forEach((gift, index) => {
 
-    giftsList.innerHTML += `
+        giftsList.innerHTML += `
 
 <div class="gift-item">
 
@@ -45,105 +38,66 @@ gifts.forEach((gift, index) => {
             ${gift.emoji}
         </div>
 
-        <div>
+        <div class="gift-info">
 
-            <div class="gift-left">
+            <h4>${gift.title}</h4>
 
-    <div class="gift-emoji">
+            <p>${gift.text || "Выиграно в Колесе удачи 🎲"}</p>
 
-        ${gift.emoji}
-
-    </div>
-
-    <div class="gift-info">
-
-        <h4>${gift.title}</h4>
-
-        <p>Выиграно в Колесе удачи 🎲</p>
+        </div>
 
     </div>
 
-</div>
+    <div class="gift-right">
 
-<div class="gift-right">
+        <div class="gift-count">
+            ×${gift.count || 1}
+        </div>
 
-    <div class="gift-count">
+        <button
+            class="useGiftBtn"
+            onclick="useGift(${index})">
 
-        ×${gift.count}
+            Использовать
+
+        </button>
 
     </div>
-
-    <button
-        class="useGiftBtn"
-        onclick="useGift(${index})">
-
-        Использовать
-
-    </button>
-
-</div>
 
 </div>
 
 `;
 
-});
-
+    });
 
 }
 
-function useGift(index) {
+async function useGift(index) {
 
-    let gifts = JSON.parse(localStorage.getItem("loveGifts")) || [];
+    const gifts = getGifts();
 
     const gift = gifts[index];
 
     if (!gift) return;
 
-    const confirmUse = confirm(
-        `Использовать подарок "${gift.title}"?`
-    );
+    if (!confirm(`Использовать подарок "${gift.title}"?`)) {
+        return;
+    }
 
-    if (!confirmUse) return;
-    
-    fetch("https://script.google.com/macros/s/AKfycbwBARC9crjIfEqQgxCOyGkfryToz01nCV3kTggPQOiartrfA8Zzucxg9ZpZLOVbexo3/exec", {
+    if (gift.count > 1) {
 
-    method: "POST",
+        gift.count--;
 
-    mode: "no-cors",
+    } else {
 
-    headers: {
-        "Content-Type": "application/json"
-    },
+        gifts.splice(index, 1);
 
-    body: JSON.stringify({
+    }
 
-        type: "gift",
+    await saveGifts(gifts);
 
-        title: gift.title
-
-    })
-
-});
-
-   // Уменьшаем количество
-gifts[index].count--;
-
-// Если подарков больше нет — удаляем карточку
-if (gifts[index].count <= 0) {
-
-    gifts.splice(index, 1);
-
-}
-
-    // Сохраняем
-    localStorage.setItem("loveGifts", JSON.stringify(gifts));
-
-    // Обновляем экран
     loadGifts();
 
-    alert(
-        `🎁 Подарок "${gift.title}" успешно использован!`
-    );
+    alert(`🎁 "${gift.title}" использован!`);
 
 }
