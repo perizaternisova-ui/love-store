@@ -172,14 +172,25 @@ async function addGift(gift) {
 
     const gifts = getGifts();
 
-    gifts.unshift({
+    const existing = gifts.find(g => g.title === gift.title);
 
-        emoji: gift.emoji || "🎁",
-        title: gift.title,
-        text: gift.text,
-        date: new Date().toLocaleDateString()
+    if (existing) {
 
-    });
+        existing.count++;
+
+    } else {
+
+        gifts.unshift({
+
+            emoji: gift.emoji || "🎁",
+            title: gift.title,
+            text: gift.text || "",
+            count: 1,
+            date: new Date().toLocaleDateString()
+
+        });
+
+    }
 
     await saveGifts(gifts);
 
