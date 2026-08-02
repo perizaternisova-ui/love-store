@@ -93,3 +93,43 @@ window.addEventListener("load", async () => {
     }
 
 });
+
+// ================================
+// Фортуна
+// ================================
+
+function getLastSpin() {
+    return localStorage.getItem("lastSpin") || "";
+}
+
+async function setLastSpin(date) {
+
+    localStorage.setItem("lastSpin", date);
+
+    await db.collection("loveStore")
+        .doc("main")
+        .set({
+            fortune: {
+                lastSpin: date
+            }
+        }, { merge: true });
+
+}
+
+function getLastReward() {
+    return localStorage.getItem("lastReward") || "";
+}
+
+async function setLastReward(reward) {
+
+    localStorage.setItem("lastReward", reward);
+
+    await db.collection("loveStore")
+        .doc("main")
+        .set({
+            fortune: {
+                lastReward: reward
+            }
+        }, { merge: true });
+
+}
