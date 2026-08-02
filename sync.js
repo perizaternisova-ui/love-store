@@ -143,7 +143,8 @@ async function setLastReward(reward) {
                 lastReward: reward
             }
         }, { merge: true });
-
+        
+}
 
 // ======================================
 // Подарки
