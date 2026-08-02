@@ -936,7 +936,7 @@ rewardText.textContent=reward.text;
 
 if (reward.type === "hearts") {
 
-    addBalance(reward.value);
+    await addLoveBalance(reward.value);
 
 }
 
