@@ -140,4 +140,43 @@ async function setLastReward(reward) {
             }
         }, { merge: true });
 
+
+// ======================================
+// Подарки
+// ======================================
+
+function getGifts() {
+
+    return JSON.parse(localStorage.getItem("gifts")) || [];
+
+}
+
+async function saveGifts(gifts) {
+
+    localStorage.setItem("gifts", JSON.stringify(gifts));
+
+    await db.collection("loveStore")
+        .doc("main")
+        .set({
+            gifts: gifts
+        }, { merge: true });
+
+}
+
+async function addGift(gift) {
+
+    const gifts = getGifts();
+
+    gifts.unshift({
+
+        emoji: gift.emoji || "🎁",
+        title: gift.title,
+        text: gift.text,
+        date: new Date().toLocaleDateString()
+
+    });
+
+    await saveGifts(gifts);
+
+}
 }
