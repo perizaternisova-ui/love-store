@@ -31,6 +31,8 @@ async function syncToFirebase() {
             .set({
                 loveBalance: Number(localStorage.getItem("loveBalance")) || 0
             }, { merge: true });
+            
+            console.log("Баланс сохранен в Firebase");
 
     } catch (e) {
         console.error("Ошибка сохранения:", e);
