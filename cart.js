@@ -72,16 +72,16 @@ document.getElementById("checkoutBtn").addEventListener("click", function () {
         total += Number(item.price) || 0;
     });
 
-    let balance = Number(localStorage.getItem("loveBalance")) || 0;
+    let balance = getLoveBalance();
 
-    if (balance < total) {
-        alert("💔 Недостаточно сердечек!");
-        return;
-    }
+if (balance < total) {
+    alert("💔 Недостаточно сердечек!");
+    return;
+}
 
-    balance -= total;
+await removeLoveBalance(total);
 
-localStorage.setItem("loveBalance", balance);
+balance = getLoveBalance();
 
 fetch("https://script.google.com/macros/s/AKfycbwBARC9crjIfEqQgxCOyGkfryToz01nCV3kTggPQOiartrfA8Zzucxg9ZpZLOVbexo3/exec", {
     method: "POST",
