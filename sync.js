@@ -23,6 +23,10 @@ if (data.fortune?.lastReward) {
     localStorage.setItem("lastReward", data.fortune.lastReward);
 }
 
+if (data.gifts) {
+    localStorage.setItem("gifts", JSON.stringify(data.gifts));
+}
+
     } catch (e) {
         console.error("Ошибка загрузки:", e);
     }
