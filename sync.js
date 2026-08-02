@@ -184,4 +184,3 @@ async function addGift(gift) {
     await saveGifts(gifts);
 
 }
-}
