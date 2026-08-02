@@ -57,7 +57,7 @@ function removeItem(index){
 
 }
 
-document.getElementById("checkoutBtn").addEventListener("click", function () {
+document.getElementById("checkoutBtn").addEventListener("click", async function () {
 
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
