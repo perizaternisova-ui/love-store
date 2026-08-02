@@ -15,6 +15,14 @@ async function syncFromFirebase() {
             localStorage.setItem("loveBalance", data.loveBalance);
         }
 
+if (data.fortune?.lastSpin) {
+    localStorage.setItem("lastSpin", data.fortune.lastSpin);
+}
+
+if (data.fortune?.lastReward) {
+    localStorage.setItem("lastReward", data.fortune.lastReward);
+}
+
     } catch (e) {
         console.error("Ошибка загрузки:", e);
     }
