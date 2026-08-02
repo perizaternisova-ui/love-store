@@ -922,7 +922,7 @@ navigator.vibrate([120,80,120]);
 setTimeout(showReward,3000);
 
 }
-function showReward(){
+async function showReward() {
 
 wheel.classList.remove("spinning");
 
