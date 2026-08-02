@@ -48,6 +48,12 @@ async function setLoveBalance(value) {
 
     localStorage.setItem("loveBalance", value);
 
+    const balance = document.getElementById("balance");
+
+    if (balance) {
+        balance.textContent = value;
+    }
+
     await syncToFirebase();
 
 }
