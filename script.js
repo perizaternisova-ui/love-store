@@ -967,3 +967,11 @@ if (claimReward) {
 if (typeof loadGifts === "function") {
     loadGifts();
 }
+
+window.testBalance = async function () {
+
+    await addLoveBalance(100);
+
+    alert("Баланс +100 ❤️");
+
+};
