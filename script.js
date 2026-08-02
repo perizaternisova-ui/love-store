@@ -899,7 +899,7 @@ function spinWheel(){
 
 const today = new Date().toDateString();
 
-const lastSpin = localStorage.getItem("lastFortuneSpin");
+const lastSpin = getLastSpin();
 
 if (lastSpin === today) {
 
@@ -948,7 +948,9 @@ if (reward.type === "gift") {
 
 fortuneModal.style.display="flex";
 
-localStorage.setItem("lastFortuneSpin", new Date().toDateString());
+await setLastSpin(new Date().toDateString());
+
+await setLastReward(reward.title);
 
 fortuneBtn.disabled=false;
 
